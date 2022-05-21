@@ -24,6 +24,7 @@ hs_err_pid*
 
 texto.txt
 /src/texto.txt
-/.vscode
-/bin
-/lib
+.vscode/
+bin/
+lib/
+src/testandstuff/

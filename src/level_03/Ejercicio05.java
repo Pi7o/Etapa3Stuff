@@ -35,7 +35,7 @@ class Alumno {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
     public String getNyA(){
-        return (this.apellido+" "+this.nombre);
+        return (this.nombre+" "+this.apellido);
     }
     public LocalDate getFecha(){
         return this.fechaDeNacimiento;
@@ -43,7 +43,7 @@ class Alumno {
     @Override
     public String toString() {
         return String.valueOf(this.fechaDeNacimiento)+
-            " - "+this.apellido+" "+this.nombre;
+            " - "+this.nombre+" "+this.apellido;
     }
 }
 
@@ -63,7 +63,8 @@ public class Ejercicio05 {
         );
         
         Map<String, Integer> salida = listaAlumnos.stream()
-            .collect(Collectors.toMap(elemento-> elemento.getNyA(),elemento->   Period.between(elemento.getFecha(), fechaparacomparar).getYears(),
+            .collect(Collectors
+            .toMap(elemento-> elemento.getNyA(),elemento-> Period.between(elemento.getFecha(), fechaparacomparar).getYears(),
             (existing, replacement) -> existing ))
         
         ;
